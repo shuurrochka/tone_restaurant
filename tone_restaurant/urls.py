@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .views import home  # Импортируем функцию home
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # Админка Django
-    path('menu/', include('menu.urls')),  # Маршруты приложения menu
-    path('', include('menu.urls')),  # Перенаправление корневого URL на приложение menu
+    path('admin/', admin.site.urls),
+    path('', home, name='home'),  # Главная страница
+    path('menu/', include('menu.urls')),  # Приложение для меню
+    path('booking/', include('booking.urls')),  # Приложение для бронирования
 ]
 from django.conf import settings
 from django.conf.urls.static import static
