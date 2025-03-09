@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню ресторана ТОНЭ</title>
+</head>
+<body>
+    <h1>Меню ресторана ТОНЭ</h1>
+    <ul>
+        {% for dish in dishes %}
+            <li>
+                <h2>{{ dish.name }}</h2>
+                <p>{{ dish.description }}</p>
+                <p>Цена: {{ dish.price }} руб.</p>
+                {% if dish.image %}
+                    <img src="{{ dish.image.url }}" alt="{{ dish.name }}" width="200">
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
