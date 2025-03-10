@@ -8,35 +8,36 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Подключение вашего CSS-файла -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <!-- Шапка с логотипом и навигацией -->
-<header class="bg-dark text-white py-3">
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <!-- Логотип -->
-            <img src="{% static 'images/logo.jpg' %}" >
-        </div>
-    </div>
-</header>
+    <!-- Шапка профиля -->
+    <div class="header"></div>
 
     <!-- Основной контент -->
-    <main class="container my-5">
-        <div class="text-center">
-            <h2 class="display-4">ТОНЭ</h2>
-            <p class="lead">Кавказская еда с традиционным гостеприимством.</p>
-            <p>+7 367 216 33 44</p>
+    <div class="container text-center mt-4">
+        <!-- Надпись и номер телефона -->
+        <p class="text-bold text-color">Кавказская еда с традиционным гостеприимством.</p>
+        <p class="text-bold text-color">+7 367 216 33 44</p>
 
-            <!-- Кнопки -->
-            <div class="mt-4">
-                <a href="{% url 'menu_list' %}" class="btn btn-primary btn-lg mx-2">Меню</a>
-                <a href="{% url 'book_table' %}" class="btn btn-success btn-lg mx-2">Забронировать стол</a>
-            </div>
-
- 
+        <!-- Кнопки и ссылка на соц. сеть -->
+        <div class="d-flex flex-column align-items-center">
+            <a href="{% url 'menu_list' %}" class="btn btn-custom">Меню</a>
+            <a href="{% url 'book_table' %}" class="btn btn-custom">Забронировать стол</a>
+            <a href="https://vk.com/tone.rest" class="social-link" target="_blank">Вконтакте</a>
         </div>
-    </main>
+
+        <!-- Адрес и Яндекс карта -->
+        <p class="text-bold text-color mt-3">ТЦ ЮниПарк, ул. Первомайская, 67/1</p>
+        <div class="map-container">
+            <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae1f9f8f8f8f8f8f8f8f8f8f8f8f8f8f8&amp;source=constructor"
+                width="100%"
+                height="300"
+                frameborder="0"
+            ></iframe>
+        </div>
+    </div>
 
     <!-- Подключение Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
